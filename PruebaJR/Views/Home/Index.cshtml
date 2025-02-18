@@ -1,0 +1,29 @@
+﻿@model List<BookViewModel>
+@{
+    ViewData["Title"] = "Books JR";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Books JR</h1>
+    <a href="/home/createbook" class="btn btn-primary">Add New Book</a>
+    <a href="/home/createauthor" class="btn btn-primary">Add New Author</a>
+    <table class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(BookViewModel book in Model)
+            {
+                <tr>
+                    <td>@book.Id</td>
+                    <td>@book.Title</td>
+                    <td>@book.AutorName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
